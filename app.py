@@ -39,7 +39,7 @@ def delete(id):
         db.session.commit()
         return redirect('/')
     except:
-        return 'There was an error while deleting.'
+        return 'There was an error while deleting the task.'
 
 @app.route('/update/<int:id>', methods=['POST', 'GET'])
 def update(id):
@@ -52,7 +52,7 @@ def update(id):
             db.session.commit()
             return redirect('/')
         except:
-            return 'There was an error while updating.'
+            return 'There was an error while updating the task.'
     else:
         return render_template('update.html', task=task)
 
